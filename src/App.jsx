@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import InputCard from './components/InputCard/InputCard'
-import Table from "./components/Table/Table"
+import TableComponent from "./components/Table/TableComponent"
 import "./style.css";
 function App() {
   
@@ -14,7 +14,7 @@ i = interes mensual (interesanual/12)/100
   return (
     <div className="App">
       <InputCard state={state} setState={setState} />
-      <Table />
+      <TableComponent />
     </div>
   )
 }
