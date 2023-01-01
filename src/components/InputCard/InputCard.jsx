@@ -3,25 +3,27 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { InputAdornment, TextField } from "@mui/material";
-
-
-const InputCard = ({state, setState}) => {
+import { getAmortizationTable } from "../../util/calculator";
+const InputCard = ({ state, setState }) => {
   const style = {
     display: "flex",
     flexDirection: "column",
   };
 
+  function handleClick() {
+    setState({ rows: getAmortizationTable(state.V, state.N, state.i)});
+    console.log(state.rows)
+  }
 
-  const handleChange = (e, setter, currentState) => {
+  function handleChange(e, setter, currentState) {
     const regex = /^[0-9\b]+$/;
     if (e.target.value == "" || regex.test(e.target.value)) {
-      setter(prevState => ({
+      setter((prevState) => ({
         ...prevState,
-        [currentState]: e.target.value
+        [currentState]: e.target.value,
       }));
     }
-  };
-  
+  }
 
   return (
     <Card>
@@ -56,7 +58,7 @@ const InputCard = ({state, setState}) => {
             value={state.i}
           ></TextField>
         </div>
-        <Button variant={"contained"} color="primary">
+        <Button variant={"contained"} color="primary" onClick={handleClick}>
           Calcular
         </Button>
       </CardContent>

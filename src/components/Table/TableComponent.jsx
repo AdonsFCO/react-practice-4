@@ -8,12 +8,16 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const TableComponent = ({ rows }) => {
 
+
+const TableComponent = ({ rows }) => {
   //Dummie Data for testing
   // rows = [
   //   { number: 1, cuotes: 12, capital: 19000, interest: 60, balance: 1900 },
   // ];
+
+
+
 
   return (
     <TableContainer>
@@ -34,9 +38,9 @@ const TableComponent = ({ rows }) => {
               return (
                 <TableRow key={row.number}>
                   <TableCell>{row.number}</TableCell>
-                  <TableCell>{row.cuotes}</TableCell>
+                  <TableCell>{row.quotes}</TableCell>
                   <TableCell>{row.capital}</TableCell>
-                  <TableCell>{row.interest}</TableCell>
+                  <TableCell>{row.interestValue}</TableCell>
                   <TableCell>{row.balance}</TableCell>
                 </TableRow>
               );
