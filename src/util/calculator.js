@@ -1,3 +1,14 @@
+function currencyFormatter(value)
+{
+  const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'DOM',
+});
+
+  return(formatter.format(value))
+}
+
+
 function getIntMonthly(i) {
   return i / 12 / 100;
 }
@@ -31,12 +42,15 @@ function getAmortizationTable(amount, amountOfQuotes, monthlyInterest) {
     let capital = getCapital(interestValue, quotes).toFixed(2);
     currentBalance = Math.round(getCurrentBalance(currentBalance, capital));
 
+
+
+    
     let month = {
       number: number + 1,
-      quotes,
-      capital,
-      interestValue,
-      balance: currentBalance + 1,
+      quotes : currencyFormatter(quotes),
+      capital : currencyFormatter(capital),
+      interestValue : currencyFormatter(interestValue),
+      balance:  currencyFormatter(currentBalance + 1),
     };
 
     months.push(month);
