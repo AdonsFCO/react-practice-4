@@ -5,3 +5,10 @@
  justify-content: center;
  flex-direction: column;
 }
+.inputBox
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

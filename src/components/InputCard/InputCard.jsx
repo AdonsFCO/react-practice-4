@@ -27,7 +27,7 @@ const InputCard = ({ state, setState }) => {
   }
 
   return (
-    <Card>
+    <Card sx={{width:"100%"}}>
       <CardContent style={style}>
         <Typography variant="h5">Calculadora de cuotas de prestamo</Typography>
         <div style={{ display: "flex", flexDirection: "column" }}>

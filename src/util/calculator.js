@@ -50,7 +50,7 @@ function getAmortizationTable(amount, amountOfQuotes, monthlyInterest) {
       quotes : currencyFormatter(quotes),
       capital : currencyFormatter(capital),
       interestValue : currencyFormatter(interestValue),
-      balance:  currencyFormatter(currentBalance),
+      balance:  currencyFormatter(currentBalance + 1 ),
     };
 
     months.push(month);
