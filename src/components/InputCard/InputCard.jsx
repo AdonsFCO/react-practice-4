@@ -11,7 +11,8 @@ const InputCard = ({ state, setState }) => {
   };
 
   function handleClick() {
-    setState({ rows: getAmortizationTable(state.V, state.N, state.i)});
+    setState({ ...state, rows: getAmortizationTable(state.V, state.N, state.i) });
+
     console.log(state.rows)
   }
 
@@ -37,8 +38,10 @@ const InputCard = ({ state, setState }) => {
             style={{ marginTop: "3px", marginBottom: "1em" }}
             InputProps={{
               endAdornment: <InputAdornment position="start">$</InputAdornment>,
+  
             }}
             onChange={(e) => handleChange(e, setState, "V")}
+            shrink
             value={state.V}
           ></TextField>
           <TextField
@@ -47,6 +50,7 @@ const InputCard = ({ state, setState }) => {
             size="small"
             style={{ marginTop: "3px", marginBottom: "1em" }}
             onChange={(e) => handleChange(e, setState, "N")}
+            shrink
             value={state.N}
           ></TextField>
           <TextField
@@ -55,6 +59,7 @@ const InputCard = ({ state, setState }) => {
             size="small"
             style={{ marginTop: "3px", marginBottom: "1em" }}
             onChange={(e) => handleChange(e, setState, "i")}
+            shrink
             value={state.i}
           ></TextField>
         </div>
